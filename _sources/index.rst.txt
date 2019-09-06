@@ -23,7 +23,5 @@
    in the sidebar both under Navigation and Recent Posts.
 
 .. toctree::
-   :hidden:
-
    about.rst
-
+   react-native.rst
