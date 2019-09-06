@@ -25,5 +25,6 @@
 .. toctree::
    about.rst
    first-post.rst
+   ablog.rst
    react-native1.rst
    react-native2.rst
