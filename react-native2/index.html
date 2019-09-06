@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>All Posts &mdash; HicoDR  documentation</title>
+  <title>react-native入门 &mdash; HicoDR  documentation</title>
   
 
   
@@ -36,9 +36,10 @@
     <link rel="author" title="About these documents" href="../about/" />
     <link rel="index" title="Index" href="../genindex/" />
     <link rel="search" title="Search" href="../search/" />
+    <link rel="prev" title="react-native考察：对比Flutter" href="../react-native1/" />
    
   
-  <link rel="alternate" type="application/atom+xml"  href="../blog/atom.xml" title="">
+  <link rel="alternate" type="application/atom+xml"  href="../blog/atom.xml" title="HicoDR Blog">
   
   
   <link href="True" rel="stylesheet">
@@ -95,10 +96,15 @@
               
             
             
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../about/">关于 HicoDR</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../react-native1/">react-native考察：对比Flutter</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../react-native2/">react-native入门</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">react-native入门</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#rn">RN环境搭建</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">虚拟机或真机调试</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">创建第一个项目</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -144,10 +150,14 @@
     
       <li><a href="../">Docs</a> &raquo;</li>
         
-      <li>All Posts</li>
+      <li>react-native入门</li>
     
     
       <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/react-native2.rst.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
     
@@ -159,66 +169,61 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
+  <div class="section" id="react-native">
+<h1>react-native入门<a class="headerlink" href="#react-native" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="rn">
+<h2>RN环境搭建<a class="headerlink" href="#rn" title="Permalink to this headline">¶</a></h2>
+<p>首先根据自己的设备和机型，参阅 <a class="reference external" href="https://reactnative.cn/docs/getting-started.html">RN官方指南</a> 完成环境搭建。</p>
+<p>以下内容皆以windows+android为环境基础</p>
+</div>
+<div class="section" id="id2">
+<h2>虚拟机或真机调试<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>总结：进入开发者模式，打开USB调试即可。</p>
+<p>不同手机进入开发者模式的方法不同，
+如honor需要进入
+<strong>关于手机</strong>
+后点击版本号十次，
+而OPPO则可以直接在手机的辅助选项中打开。</p>
+<p>连接完毕后，终端输入
+<strong>adb devices</strong>
+检查连接情况。ADB报错通过
+<strong>adb start-server</strong>
+和
+<strong>adb kill-server</strong>
+重试。</p>
+</div>
+<div class="section" id="id3">
+<h2>创建第一个项目<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>打开终端，cd到目录下，输入
+<strong>react-native init ProjectName</strong></p>
+<p>项目初始化完毕后，cd到项目内
+<strong>react-native run-android</strong></p>
+<p>过程中如果出现dependence（依赖）问题可以
+<strong>npm install</strong>
+后再重新run</p>
+<p>静待项目loading，完成后在手机上出现React-native的简约风示例程序</p>
+<p>虚拟机通过Menu键、真机仅需摇晃手机 进入开发者控制台体验RN框架中的调试功能
+，包括重载、JS 调试、热重载、事件监管。</p>
+<p>至此环境搭建完成，欢迎您进入React-native的美好世界（上贼船，入煤坑）</p>
+</div>
+</div>
+
   <div class="section">
-
-    <h1>
-      
-      All
-      
-      Posts
-      
-    </h1>
-    
-    
-
-    <div class="section">
-      <h2><a href="../first-post/">博客计划</a></h2>
-
-      <ul class="ablog-archive">
-      <li>
-      <i class="fa fa-calendar"></i>
-        05 九月 2019
-      
-      </li>
-        
-
   
-  <li id="author"><span><i class="fa-fw fa fa-user"></i></span>
-    
-      
-      <a href="author/hicoderdr/">HicoderDR</a>
-      
-    </li>
   
-
-  
-
-  
-
-  
-
-  
-  <li id="tags"><span><i class="fa-fw fa fa-tag"></i></span>
-    
-      
-      <a href="tag/atag/">atag</a>
-      
-    </li>
-  
-  </ul>
-      <p>Hello World! 我是天猫精灵，咳咳，开个玩笑。</p>
-
-      <p><a href="../first-post/">Read more ...</a></p>
-      <hr>
-    </div>
-    
-    
   </div>
 
            </div>
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../react-native1/" class="btn btn-neutral float-left" title="react-native考察：对比Flutter" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
