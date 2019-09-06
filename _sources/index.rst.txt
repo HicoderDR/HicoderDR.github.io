@@ -3,13 +3,13 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to HicoDR's Blog!
+欢迎来到 HicoDR 的博客 !
 ==================================
 
-Hello World!想知道更多关于我:ref:`about`
+关于我: :ref:`about`
 
 
-帖子列表:
+博客列表:
 
 .. postlist:: 5
    :excerpts:
