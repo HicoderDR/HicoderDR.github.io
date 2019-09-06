@@ -1,6 +1,3 @@
-
-.. HicoDR post example, created by `ablog start` on Sep 06, 2019.
-
 .. post:: Sep 05, 2019
    :tags: atag
    :author: HicoderDR
