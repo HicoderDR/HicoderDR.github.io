@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>All Posts &mdash; HicoDR  documentation</title>
+  <title>react-native初识:目录结构与HelloWorld &mdash; HicoDR  documentation</title>
   
 
   
@@ -38,7 +38,7 @@
     <link rel="search" title="Search" href="../search/" />
    
   
-  <link rel="alternate" type="application/atom+xml"  href="../blog/atom.xml" title="">
+  <link rel="alternate" type="application/atom+xml"  href="../blog/atom.xml" title="HicoDR Blog">
   
   
   <link href="True" rel="stylesheet">
@@ -101,7 +101,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../ablog/">我如何创建自己的博客</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../react-native1/">react-native考察：对比Flutter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../react-native2/">react-native入门</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../react-native3/">react-native初识:目录结构与HelloWorld</a></li>
 </ul>
 
             
@@ -147,10 +146,14 @@
     
       <li><a href="../">Docs</a> &raquo;</li>
         
-      <li>All Posts</li>
+      <li>react-native初识:目录结构与HelloWorld</li>
     
     
       <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/react-native3.rst.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
     
@@ -162,60 +165,72 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
+  <div class="section" id="react-native-helloworld">
+<h1>react-native初识:目录结构与HelloWorld<a class="headerlink" href="#react-native-helloworld" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="react-native">
+<h2>React-native的目录结构<a class="headerlink" href="#react-native" title="Permalink to this headline">¶</a></h2>
+<p>经过init后的react-native目录</p>
+<img alt="../_images/table1.png" src="../_images/table1.png" />
+<dl class="simple">
+<dt>_tests_</dt><dd><p>单元测试所用文件</p>
+</dd>
+<dt>android</dt><dd><p>存放android有关目录，其中的目录结构与原生android一致。</p>
+</dd>
+<dt>ios</dt><dd><p>同上，ios原生结构文件夹</p>
+</dd>
+<dt>node_modules</dt><dd><p>项目中所有的模组，引入的依赖、库都将被安装在其中</p>
+</dd>
+<dt>index.js</dt><dd><p>项目默认的入口文件</p>
+</dd>
+<dt>App.js</dt><dd><p>项目默认创建的第一个组件（Component）</p>
+</dd>
+<dt>package.json</dt><dd><p>管理项目所有依赖包的json文件</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="helloworld">
+<h2>HelloWorld<a class="headerlink" href="#helloworld" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="index-js">
+<h3>观察index.js的内容<a class="headerlink" href="#index-js" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="p">{</span><span class="n">AppRegistry</span><span class="p">}</span> <span class="kn">from</span> <span class="s1">&#39;react-native&#39;</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">App</span> <span class="kn">from</span> <span class="s1">&#39;./App&#39;</span><span class="p">;</span>
+<span class="kn">import</span> <span class="p">{</span><span class="n">name</span> <span class="k">as</span> <span class="n">appName</span><span class="p">}</span> <span class="kn">from</span> <span class="s1">&#39;./app.json&#39;</span><span class="p">;</span>
+
+<span class="n">AppRegistry</span><span class="o">.</span><span class="n">registerComponent</span><span class="p">(</span><span class="n">appName</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="n">App</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>可以发现，通过import和registerComponent，项目的入口被转到了App.js</p>
+</div>
+<div class="section" id="app-js">
+<h3>更改App.js的内容<a class="headerlink" href="#app-js" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">React</span><span class="o">,</span> <span class="p">{</span> <span class="n">Component</span> <span class="p">}</span> <span class="kn">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="kn">import</span> <span class="p">{</span> <span class="n">Text</span> <span class="p">}</span> <span class="kn">from</span> <span class="s1">&#39;react-native&#39;</span><span class="p">;</span>
+
+<span class="n">export</span> <span class="n">default</span> <span class="k">class</span> <span class="nc">HelloWorldApp</span> <span class="n">extends</span> <span class="n">Component</span><span class="p">{</span>
+    <span class="n">render</span><span class="p">(){</span>
+        <span class="k">return</span><span class="p">(</span>
+            <span class="o">&lt;</span><span class="n">Text</span><span class="o">&gt;</span><span class="n">Hello</span> <span class="n">World</span><span class="o">&lt;/</span><span class="n">Text</span><span class="o">&gt;</span>
+        <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>接下来只需要
+<strong>react-native run-android</strong>
+便可以查看到Hello world的结果了</p>
+<dl class="simple">
+<dt>Tips</dt><dd><p>在一个js文件中我们可以创建多个
+<strong>class</strong>
+（Component），添加export default即将其作为该文件的默认入口</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
   <div class="section">
-
-    <h1>
-      
-      All
-      
-      Posts
-      
-    </h1>
-    
-    
-
-    <div class="section">
-      <h2><a href="../first-post/">博客计划</a></h2>
-
-      <ul class="ablog-archive">
-      <li>
-      <i class="fa fa-calendar"></i>
-        05 九月 2019
-      
-      </li>
-        
-
   
-  <li id="author"><span><i class="fa-fw fa fa-user"></i></span>
-    
-      
-      <a href="author/hicoderdr/">HicoderDR</a>
-      
-    </li>
   
-
-  
-
-  
-
-  
-
-  
-  <li id="tags"><span><i class="fa-fw fa fa-tag"></i></span>
-    
-      
-      <a href="tag/atag/">atag</a>
-      
-    </li>
-  
-  </ul>
-      <p>Hello World! 我是天猫精灵，咳咳，开个玩笑。</p>
-
-      <p><a href="../first-post/">Read more ...</a></p>
-      <hr>
-    </div>
-    
-    
   </div>
 
            </div>
