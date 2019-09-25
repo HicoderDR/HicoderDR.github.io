@@ -109,7 +109,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#id2">我使用的组件</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#react-navigation">1.React Navigation(界面跳转、路由)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#app-js">首先修改App.js</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id4">然后在添加进路由的所有页面中使用</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">然后在添加进路由的所有页面中使用</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#asyncstorage">2.Asyncstorage(本地存储)</a></li>
@@ -198,7 +198,7 @@
 <h2>我使用的组件<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="react-navigation">
 <h3>1.React Navigation(界面跳转、路由)<a class="headerlink" href="#react-navigation" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="https://reactnavigation.org/docs/en/getting-started.html">这里是官方文档</a></p>
+<p><a class="reference external" href="https://reactnavigation.org/docs/en/getting-started.html">这里是Navigation官方文档</a></p>
 <div class="section" id="app-js">
 <h4>首先修改App.js<a class="headerlink" href="#app-js" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">React</span> <span class="kn">from</span> <span class="s2">&quot;react&quot;</span><span class="p">;</span>
@@ -239,8 +239,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id4">
-<h4>然后在添加进路由的所有页面中使用<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id3">
+<h4>然后在添加进路由的所有页面中使用<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#最简单的--打开一个新界面，此时按回退键可以回到原界面</span>
 <span class="n">this</span><span class="o">.</span><span class="n">props</span><span class="o">.</span><span class="n">navigation</span><span class="o">.</span><span class="n">navigate</span><span class="p">(</span><span class="s2">&quot;Login&quot;</span><span class="p">)</span>
 <span class="c1">#销毁当前界面，替换成新界面</span>
@@ -464,10 +464,10 @@ export default class CustomImage extends Component {
 </div>
 <div class="section" id="react-native-image-crop-picker">
 <h3>7.react-native-image-crop-picker(相机和相册)<a class="headerlink" href="#react-native-image-crop-picker" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="https://github.com/ivpusic/react-native-image-crop-picker">这里是官方文档</a></p>
+<p><a class="reference external" href="https://github.com/ivpusic/react-native-image-crop-picker">这里是imagepicker官方文档</a></p>
 <img alt="../_images/image-picker.png" src="../_images/image-picker.png" />
 <p>使用方法</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="p">{</span> <span class="n">Button</span><span class="p">}</span> <span class="kn">from</span> <span class="s1">&#39;react-native-material-ui&#39;</span><span class="p">;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="p">{</span><span class="n">Button</span><span class="p">}</span> <span class="kn">from</span> <span class="s1">&#39;react-native-material-ui&#39;</span><span class="p">;</span>
 <span class="kn">import</span> <span class="nn">ImagePicker</span> <span class="kn">from</span> <span class="s1">&#39;react-native-image-crop-picker&#39;</span><span class="p">;</span>
 
 <span class="c1">#在任意组件的onpress事件中触发</span>
@@ -508,12 +508,12 @@ export default class CustomImage extends Component {
 </div>
 <div class="section" id="react-native-material-ui-ui">
 <h3>9.react-native-material-ui(UI组件库)<a class="headerlink" href="#react-native-material-ui-ui" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="https://github.com/xotahal/react-native-material-ui">这里是Github网址</a></p>
+<p><a class="reference external" href="https://github.com/xotahal/react-native-material-ui">这里是material-ui Github网址</a></p>
 <img alt="../_images/material-ui.png" src="../_images/material-ui.png" />
 </div>
 <div class="section" id="react-native-image-zoom-viewer">
 <h3>10.react-native-image-zoom-viewer(图片查看组件)<a class="headerlink" href="#react-native-image-zoom-viewer" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="https://github.com/magicwing/react-native-image-zoom-viewer">这里是Github网址</a></p>
+<p><a class="reference external" href="https://github.com/magicwing/react-native-image-zoom-viewer">这里是image-viewer Github网址</a></p>
 <img alt="../_images/image-zoom1.gif" src="../_images/image-zoom1.gif" />
 <img alt="../_images/image-zoom2.gif" src="../_images/image-zoom2.gif" />
 </div>

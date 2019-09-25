@@ -15,7 +15,7 @@ react-native初识：我使用的组件
 ****************************
 1.React Navigation(界面跳转、路由)
 ++++++++++++++++++++++++++++++++++++
-`这里是官方文档 <https://reactnavigation.org/docs/en/getting-started.html>`_
+`这里是Navigation官方文档 <https://reactnavigation.org/docs/en/getting-started.html>`_
 
 首先修改App.js
 --------------------
@@ -100,6 +100,7 @@ react-native初识：我使用的组件
 
 使用方法
 ::
+
     #首先要引入
     import AsyncStorage from '@react-native-community/async-storage';
 
@@ -295,13 +296,14 @@ async的特点：
 
 7.react-native-image-crop-picker(相机和相册)
 ++++++++++++++++++++++++++++++++++++++++++++++++++
-`这里是官方文档 <https://github.com/ivpusic/react-native-image-crop-picker>`_
+`这里是imagepicker官方文档 <https://github.com/ivpusic/react-native-image-crop-picker>`_
 
 .. image:: _static/image-picker.png 
 
 使用方法
 ::
-    import { Button} from 'react-native-material-ui';
+
+    import {Button} from 'react-native-material-ui';
     import ImagePicker from 'react-native-image-crop-picker';
 
     #在任意组件的onpress事件中触发
@@ -341,13 +343,13 @@ async的特点：
 
 9.react-native-material-ui(UI组件库)
 ++++++++++++++++++++++++++++++++++++++++++
-`这里是Github网址 <https://github.com/xotahal/react-native-material-ui>`_
+`这里是material-ui Github网址 <https://github.com/xotahal/react-native-material-ui>`_
 
 .. image:: _static/material-ui.png 
 
 10.react-native-image-zoom-viewer(图片查看组件)
 ++++++++++++++++++++++++++++++++++++++++++++++++++++
-`这里是Github网址 <https://github.com/magicwing/react-native-image-zoom-viewer>`_
+`这里是image-viewer Github网址 <https://github.com/magicwing/react-native-image-zoom-viewer>`_
 
 .. image:: _static/image-zoom1.gif 
 
