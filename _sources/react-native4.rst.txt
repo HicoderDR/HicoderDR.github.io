@@ -1,4 +1,4 @@
-.. post::Sep 21 , 2019
+.. post::Sep 20 , 2019
    :tags: react-native
    :category: react-native
    :author: HicoderDR
@@ -74,7 +74,7 @@ State是我们刷新界面的便捷接口，
             this.state={
                 text:"init",
                 data:[],
-                //定义state
+                #定义state
             }
         }
         render(){
@@ -97,7 +97,7 @@ State是我们刷新界面的便捷接口，
 
 
 `props(属性) <https://reactnative.cn/docs/props/>`_
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++=
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 就如我们熟知的面向对象思想，这就是所谓的类成员，
 它可以是一个变量，也可以是一个函数。
 

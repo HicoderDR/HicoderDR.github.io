@@ -210,6 +210,8 @@ async的特点：
 
 5. react-native-vector-icons(精美图标库)
 +++++++++++++++++++++++++++++++++++++++++++++
+`npm官方文档 <https://www.npmjs.com/package/react-native-vector-icons>`_
+
 如何使用
 ::
 

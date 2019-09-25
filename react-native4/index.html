@@ -107,9 +107,10 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">react-native初识: state 和 props</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#component">Component内部结构</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id1">回顾标准Component：</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">state(状态)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id6">父组件向子组件传递props</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id7">子组件向父组件传递props</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">state(状态)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">props(属性)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id7">父组件向子组件传递props</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">子组件向父组件传递props</a></li>
 </ul>
 </li>
 </ul>
@@ -247,7 +248,7 @@
         <span class="n">this</span><span class="o">.</span><span class="n">state</span><span class="o">=</span><span class="p">{</span>
             <span class="n">text</span><span class="p">:</span><span class="s2">&quot;init&quot;</span><span class="p">,</span>
             <span class="n">data</span><span class="p">:[],</span>
-            <span class="o">//</span><span class="n">定义state</span>
+            <span class="c1">#定义state</span>
         <span class="p">}</span>
     <span class="p">}</span>
     <span class="n">render</span><span class="p">(){</span>
@@ -268,12 +269,13 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p><a class="reference external" href="https://reactnative.cn/docs/props/">props(属性)</a>
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++=
-就如我们熟知的面向对象思想，这就是所谓的类成员，
-它可以是一个变量，也可以是一个函数。</p>
+</div>
 <div class="section" id="id6">
-<h4>父组件向子组件传递props<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<h3><a class="reference external" href="https://reactnative.cn/docs/props/">props(属性)</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>就如我们熟知的面向对象思想，这就是所谓的类成员，
+它可以是一个变量，也可以是一个函数。</p>
+<div class="section" id="id7">
+<h4>父组件向子组件传递props<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
 <p>父组件中</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">React</span><span class="o">,</span> <span class="p">{</span> <span class="n">Component</span> <span class="p">}</span> <span class="kn">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
 <span class="kn">import</span> <span class="p">{</span> <span class="n">Text</span> <span class="p">}</span> <span class="kn">from</span> <span class="s1">&#39;react-native&#39;</span><span class="p">;</span>
@@ -318,8 +320,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id7">
-<h4>子组件向父组件传递props<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id8">
+<h4>子组件向父组件传递props<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
 <p>父组件中</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">React</span><span class="o">,</span> <span class="p">{</span> <span class="n">Component</span> <span class="p">}</span> <span class="kn">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
 <span class="kn">import</span> <span class="p">{</span> <span class="n">Text</span> <span class="p">}</span> <span class="kn">from</span> <span class="s1">&#39;react-native&#39;</span><span class="p">;</span>
