@@ -91,7 +91,7 @@ react-native初识：我使用的组件
 `如何与标题栏交互 <https://reactnavigation.org/docs/en/header-buttons.html>`_
 
 2.Asyncstorage(本地存储)
-+++++++++++++++++++++++++++++++++++==
++++++++++++++++++++++++++++++++++++++
 `Github项目地址 <https://github.com/react-native-community/async-storage>`_
 
 这个东西的使用其实是很坑的，没有达到我的期望
@@ -208,7 +208,7 @@ async的特点：
 `不管问几次 我都吹爆 NativeBase <https://docs.nativebase.io/>`_
 
 5. react-native-vector-icons(精美图标库)
-+++++++++++++++++++++++++++++++++++++++++++++=
++++++++++++++++++++++++++++++++++++++++++++++
 如何使用
 ::
 
@@ -294,7 +294,7 @@ async的特点：
     <CustomImage uri={item.uri} stylenew={styles.iconStyle}/>
 
 7.react-native-image-crop-picker(相机和相册)
-++++++++++++++++++++++++++++++++++++++++++++++++++=
+++++++++++++++++++++++++++++++++++++++++++++++++++
 `这里是官方文档 <https://github.com/ivpusic/react-native-image-crop-picker>`_
 
 .. image:: _static/image-picker.png 
