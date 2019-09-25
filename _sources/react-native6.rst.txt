@@ -91,7 +91,7 @@ react-native初识：我使用的组件
 `如何与标题栏交互 <https://reactnavigation.org/docs/en/header-buttons.html>`_
 
 2.Asyncstorage(本地存储)
-------------------------------------
++++++++++++++++++++++++++++++++++++==
 `Github项目地址 <https://github.com/react-native-community/async-storage>`_
 
 这个东西的使用其实是很坑的，没有达到我的期望
@@ -143,7 +143,7 @@ react-native初识：我使用的组件
     }
 
 3.async，await，promise
-------------------------------
+++++++++++++++++++++++++++++++++
 既然上面写了async，就顺便介绍一下
 
 asynchrony（异步），没错，就是令人头秃的异步函数。
@@ -202,13 +202,13 @@ async的特点：
     - await语句后的Promise对象变成reject状态时，那么整个async函数会中断，后面的程序不会继续执行
 
 4.NativeBase
----------------------------
+++++++++++++++++++++++++++++
 这个就不多说了，真的是见到的最棒的第三方库了
 
 `不管问几次 我都吹爆 NativeBase <https://docs.nativebase.io/>`_
 
 5. react-native-vector-icons(精美图标库)
-------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++=
 如何使用
 ::
 
@@ -230,7 +230,7 @@ async的特点：
 `在这里查找图片索引和对应的图标库 <https://oblador.github.io/react-native-vector-icons/>`_
 
 6.CustomImage（图片预加载）
-----------------------------------
+++++++++++++++++++++++++++++++++++
 在图片未加载完成前使用loading.png
 
 编写CustomImage.js
@@ -294,7 +294,7 @@ async的特点：
     <CustomImage uri={item.uri} stylenew={styles.iconStyle}/>
 
 7.react-native-image-crop-picker(相机和相册)
-----------------------------------------------------
+++++++++++++++++++++++++++++++++++++++++++++++++++=
 `这里是官方文档 <https://github.com/ivpusic/react-native-image-crop-picker>`_
 
 .. image:: _static/image-picker.png 
@@ -334,19 +334,19 @@ async的特点：
     />
 
 8.react-native-share(分享组件)
------------------------------------
++++++++++++++++++++++++++++++++++++++
 `这里是Github网址 <https://github.com/songxiaoliang/react-native-share>`_
 
 .. image:: _static/share.png
 
 9.react-native-material-ui(UI组件库)
-------------------------------------------
+++++++++++++++++++++++++++++++++++++++++++
 `这里是Github网址 <https://github.com/xotahal/react-native-material-ui>`_
 
 .. image:: _static/material-ui.png 
 
 10.react-native-image-zoom-viewer(图片查看组件)
----------------------------------------------------
+++++++++++++++++++++++++++++++++++++++++++++++++++++
 `这里是Github网址 <https://github.com/magicwing/react-native-image-zoom-viewer>`_
 
 .. image:: _static/image-zoom1.gif 

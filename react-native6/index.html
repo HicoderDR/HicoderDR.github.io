@@ -110,17 +110,14 @@
 <li class="toctree-l3"><a class="reference internal" href="#react-navigation">1.React Navigation(界面跳转、路由)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#app-js">首先修改App.js</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id4">然后在添加进路由的所有页面中使用</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#asyncstorage">2.Asyncstorage(本地存储)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#async-await-promise">3.async，await，promise</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#nativebase">4.NativeBase</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#react-native-vector-icons">5. react-native-vector-icons(精美图标库)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#customimage">6.CustomImage（图片预加载）</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#react-native-image-crop-picker">7.react-native-image-crop-picker(相机和相册)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#react-native-share">8.react-native-share(分享组件)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#react-native-material-ui-ui">9.react-native-material-ui(UI组件库)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#react-native-image-zoom-viewer">10.react-native-image-zoom-viewer(图片查看组件)</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#async-await-promise">3.async，await，promise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nativebase">4.NativeBase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#customimage">6.CustomImage（图片预加载）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#react-native-share">8.react-native-share(分享组件)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#react-native-material-ui-ui">9.react-native-material-ui(UI组件库)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#react-native-image-zoom-viewer">10.react-native-image-zoom-viewer(图片查看组件)</a></li>
 </ul>
 </li>
 </ul>
@@ -269,10 +266,9 @@
 </dl>
 <p><a class="reference external" href="https://reactnavigation.org/docs/en/headers.html">如何配置标题栏</a></p>
 <p><a class="reference external" href="https://reactnavigation.org/docs/en/header-buttons.html">如何与标题栏交互</a></p>
-</div>
-<div class="section" id="asyncstorage">
-<h4>2.Asyncstorage(本地存储)<a class="headerlink" href="#asyncstorage" title="Permalink to this headline">¶</a></h4>
-<p><a class="reference external" href="https://github.com/react-native-community/async-storage">Github项目地址</a></p>
+<p>2.Asyncstorage(本地存储)
++++++++++++++++++++++++++++++++++++==
+<a class="reference external" href="https://github.com/react-native-community/async-storage">Github项目地址</a></p>
 <p>这个东西的使用其实是很坑的，没有达到我的期望</p>
 <p>但能怎么办嘛，能用的就它一个了……</p>
 <p>使用方法</p>
@@ -320,8 +316,9 @@
 </pre></div>
 </div>
 </div>
+</div>
 <div class="section" id="async-await-promise">
-<h4>3.async，await，promise<a class="headerlink" href="#async-await-promise" title="Permalink to this headline">¶</a></h4>
+<h3>3.async，await，promise<a class="headerlink" href="#async-await-promise" title="Permalink to this headline">¶</a></h3>
 <p>既然上面写了async，就顺便介绍一下</p>
 <p>asynchrony（异步），没错，就是令人头秃的异步函数。</p>
 <dl class="simple">
@@ -374,13 +371,12 @@ while(!flag){
 </dl>
 </div>
 <div class="section" id="nativebase">
-<h4>4.NativeBase<a class="headerlink" href="#nativebase" title="Permalink to this headline">¶</a></h4>
+<h3>4.NativeBase<a class="headerlink" href="#nativebase" title="Permalink to this headline">¶</a></h3>
 <p>这个就不多说了，真的是见到的最棒的第三方库了</p>
 <p><a class="reference external" href="https://docs.nativebase.io/">不管问几次 我都吹爆 NativeBase</a></p>
-</div>
-<div class="section" id="react-native-vector-icons">
-<h4>5. react-native-vector-icons(精美图标库)<a class="headerlink" href="#react-native-vector-icons" title="Permalink to this headline">¶</a></h4>
-<p>如何使用</p>
+<p>5. react-native-vector-icons(精美图标库)
++++++++++++++++++++++++++++++++++++++++++++++=
+如何使用</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">MaterialCommunityIcons</span> <span class="kn">from</span> <span class="s1">&#39;react-native-vector-icons/MaterialCommunityIcons&#39;</span><span class="p">;</span>
 <span class="kn">import</span> <span class="nn">FontAwesome</span> <span class="kn">from</span> <span class="s1">&#39;react-native-vector-icons/FontAwesome&#39;</span><span class="p">;</span>
 
@@ -400,7 +396,7 @@ while(!flag){
 <p><a class="reference external" href="https://oblador.github.io/react-native-vector-icons/">在这里查找图片索引和对应的图标库</a></p>
 </div>
 <div class="section" id="customimage">
-<h4>6.CustomImage（图片预加载）<a class="headerlink" href="#customimage" title="Permalink to this headline">¶</a></h4>
+<h3>6.CustomImage（图片预加载）<a class="headerlink" href="#customimage" title="Permalink to this headline">¶</a></h3>
 <p>在图片未加载完成前使用loading.png</p>
 <p>编写CustomImage.js</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>import React, {Component} from &#39;react&#39;;
@@ -460,10 +456,9 @@ export default class CustomImage extends Component {
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">CustomImage</span> <span class="n">uri</span><span class="o">=</span><span class="p">{</span><span class="n">item</span><span class="o">.</span><span class="n">uri</span><span class="p">}</span> <span class="n">stylenew</span><span class="o">=</span><span class="p">{</span><span class="n">styles</span><span class="o">.</span><span class="n">iconStyle</span><span class="p">}</span><span class="o">/&gt;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="react-native-image-crop-picker">
-<h4>7.react-native-image-crop-picker(相机和相册)<a class="headerlink" href="#react-native-image-crop-picker" title="Permalink to this headline">¶</a></h4>
-<p><a class="reference external" href="https://github.com/ivpusic/react-native-image-crop-picker">这里是官方文档</a></p>
+<p>7.react-native-image-crop-picker(相机和相册)
+++++++++++++++++++++++++++++++++++++++++++++++++++=
+<a class="reference external" href="https://github.com/ivpusic/react-native-image-crop-picker">这里是官方文档</a></p>
 <img alt="../_images/image-picker.png" src="../_images/image-picker.png" />
 <p>使用方法</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="p">{</span> <span class="n">Button</span><span class="p">}</span> <span class="kn">from</span> <span class="s1">&#39;react-native-material-ui&#39;</span><span class="p">;</span>
@@ -501,21 +496,20 @@ export default class CustomImage extends Component {
 </div>
 </div>
 <div class="section" id="react-native-share">
-<h4>8.react-native-share(分享组件)<a class="headerlink" href="#react-native-share" title="Permalink to this headline">¶</a></h4>
+<h3>8.react-native-share(分享组件)<a class="headerlink" href="#react-native-share" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://github.com/songxiaoliang/react-native-share">这里是Github网址</a></p>
 <img alt="../_images/share.png" src="../_images/share.png" />
 </div>
 <div class="section" id="react-native-material-ui-ui">
-<h4>9.react-native-material-ui(UI组件库)<a class="headerlink" href="#react-native-material-ui-ui" title="Permalink to this headline">¶</a></h4>
+<h3>9.react-native-material-ui(UI组件库)<a class="headerlink" href="#react-native-material-ui-ui" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://github.com/xotahal/react-native-material-ui">这里是Github网址</a></p>
 <img alt="../_images/material-ui.png" src="../_images/material-ui.png" />
 </div>
 <div class="section" id="react-native-image-zoom-viewer">
-<h4>10.react-native-image-zoom-viewer(图片查看组件)<a class="headerlink" href="#react-native-image-zoom-viewer" title="Permalink to this headline">¶</a></h4>
+<h3>10.react-native-image-zoom-viewer(图片查看组件)<a class="headerlink" href="#react-native-image-zoom-viewer" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://github.com/magicwing/react-native-image-zoom-viewer">这里是Github网址</a></p>
 <img alt="../_images/image-zoom1.gif" src="../_images/image-zoom1.gif" />
 <img alt="../_images/image-zoom2.gif" src="../_images/image-zoom2.gif" />
-</div>
 </div>
 </div>
 </div>
