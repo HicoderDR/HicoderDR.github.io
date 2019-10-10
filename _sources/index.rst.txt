@@ -33,3 +33,4 @@
    react-native5.rst
    react-native6.rst
    react-native7.rst
+   react-native8.rst
