@@ -1,4 +1,4 @@
-.. post::Oct 10,2019
+.. post::Oct 11,2019
     :tags:react-native
     :category:react-native
     :author:HicoderDR
@@ -288,7 +288,7 @@ CountDownText我是借鉴的别人的代码，挂出
             const phone=this.state.phone;
             const smscode=this.state.smscode;
             #判断是否正确
-            if(phone.length===11 && smscode===this.state.correct){
+            if(phone.length===11 && smscode===this.state.correct &&smscode.length==6){
                 #此时已经可以判断成功登陆，进行跳转，不做以下步骤
                 
                 #获取用户信息并将其保存，以便自动登陆

@@ -36,6 +36,7 @@
     <link rel="author" title="About these documents" href="../about/" />
     <link rel="index" title="Index" href="../genindex/" />
     <link rel="search" title="Search" href="../search/" />
+    <link rel="next" title="react-native实战:支付宝接入app支付" href="../react-native9/" />
     <link rel="prev" title="react-native实战:轮播引导和登陆注册" href="../react-native7/" />
    
   
@@ -116,6 +117,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../react-native9/">react-native实战:支付宝接入app支付</a></li>
 </ul>
 
             
@@ -450,7 +452,7 @@ export default class MSLogin extends Component{
         <span class="n">const</span> <span class="n">phone</span><span class="o">=</span><span class="n">this</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">phone</span><span class="p">;</span>
         <span class="n">const</span> <span class="n">smscode</span><span class="o">=</span><span class="n">this</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">smscode</span><span class="p">;</span>
         <span class="c1">#判断是否正确</span>
-        <span class="k">if</span><span class="p">(</span><span class="n">phone</span><span class="o">.</span><span class="n">length</span><span class="o">===</span><span class="mi">11</span> <span class="o">&amp;&amp;</span> <span class="n">smscode</span><span class="o">===</span><span class="n">this</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">correct</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">phone</span><span class="o">.</span><span class="n">length</span><span class="o">===</span><span class="mi">11</span> <span class="o">&amp;&amp;</span> <span class="n">smscode</span><span class="o">===</span><span class="n">this</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">correct</span> <span class="o">&amp;&amp;</span><span class="n">smscode</span><span class="o">.</span><span class="n">length</span><span class="o">==</span><span class="mi">6</span><span class="p">){</span>
             <span class="c1">#此时已经可以判断成功登陆，进行跳转，不做以下步骤</span>
 
             <span class="c1">#获取用户信息并将其保存，以便自动登陆</span>
@@ -513,6 +515,8 @@ export default class MSLogin extends Component{
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../react-native9/" class="btn btn-neutral float-right" title="react-native实战:支付宝接入app支付" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../react-native7/" class="btn btn-neutral float-left" title="react-native实战:轮播引导和登陆注册" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
