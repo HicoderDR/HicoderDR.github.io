@@ -1,4 +1,4 @@
-.. post::Oct 24,2019
+.. post::Dec 4,2019
     :tags:react-native
     :category:react-native
     :author:HicoderDR
@@ -132,7 +132,7 @@ RN的要求是Xcode 10及以上，我下载了Xcode 10.1，追悔莫及。
 
 思路是一个个装，装到哪个出了问题就肯定是哪个了
 
-血与泪的纪录，找出三个害人精
+血与泪的纪录，找出四个害人精
 ::
 
     yarn add native-base
