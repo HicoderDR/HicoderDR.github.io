@@ -1,6 +1,6 @@
 .. post::Oct 24,2019
-    :tags:springboot
-    :category:springboot
+    :tags:react-native
+    :category:react-native
     :author:HicoderDR
 
 Springboot初识:了解Spring
