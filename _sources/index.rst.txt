@@ -40,3 +40,4 @@
    bs4.rst
    pythread.rst
    openssh.rst
+   fiddler.rst
