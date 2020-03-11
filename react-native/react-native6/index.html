@@ -36,8 +36,8 @@
     <link rel="author" title="About these documents" href="../../about/" />
     <link rel="index" title="Index" href="../../genindex/" />
     <link rel="search" title="Search" href="../../search/" />
-    <link rel="next" title="react-native实战:轮播引导和登陆注册" href="../react-native7/" />
-    <link rel="prev" title="react-native初识:布局和CSS样式、第三方库的引入" href="../react-native5/" />
+    <link rel="next" title="react-native扩展:IOS踩坑纪录" href="../../ios/react-native10/" />
+    <link rel="prev" title="react-native实战:支付宝接入app支付" href="../react-native9/" />
    
   
   <link rel="alternate" type="application/atom+xml"  href="../../blog/atom.xml" title="HicoDR Blog">
@@ -110,6 +110,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../react-native3/">react-native初识:目录结构与HelloWorld</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../react-native4/">react-native初识: state 和 props</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../react-native5/">react-native初识:布局和CSS样式、第三方库的引入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../react-native7/">react-native实战:轮播引导和登陆注册</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../react-native8/">react-native进阶:秒嘀云+Nativebase实现短信验证码登陆</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../react-native9/">react-native实战:支付宝接入app支付</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">react-native初识：我使用的组件</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id2">我使用的组件</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#react-navigation">1.React Navigation(界面跳转、路由)</a><ul>
@@ -135,9 +138,6 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../react-native7/">react-native实战:轮播引导和登陆注册</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../react-native8/">react-native进阶:秒嘀云+Nativebase实现短信验证码登陆</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../react-native9/">react-native实战:支付宝接入app支付</a></li>
 </ul>
 <p class="caption"><span class="caption-text">IOS开发</span></p>
 <ul>
@@ -607,11 +607,11 @@ export default class CustomImage extends Component {
 <span id="header-n15"></span><h5><a class="toc-backref" href="#id25">CachedImage</a><a class="headerlink" href="#cachedimage" title="Permalink to this headline">¶</a></h5>
 <div class="section" id="basic-usage">
 <span id="header-n39"></span><h6><a class="toc-backref" href="#id26">basic usage</a><a class="headerlink" href="#basic-usage" title="Permalink to this headline">¶</a></h6>
-<div class="highlight-react notranslate"><div class="highlight"><pre><span></span>import {CachedImage} from &quot;react-native-img-cache&quot;;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="p">{</span><span class="n">CachedImage</span><span class="p">}</span> <span class="kn">from</span> <span class="s2">&quot;react-native-img-cache&quot;</span><span class="p">;</span>
 
 
 
-&lt;CachedImage source={{ uri:&quot;https://i.ytimg.com/vi/default.jpg&quot; }} /&gt;
+<span class="o">&lt;</span><span class="n">CachedImage</span> <span class="n">source</span><span class="o">=</span><span class="p">{{</span> <span class="n">uri</span><span class="p">:</span><span class="s2">&quot;https://i.ytimg.com/vi/default.jpg&quot;</span> <span class="p">}}</span> <span class="o">/&gt;</span>
 </pre></div>
 </div>
 <p>原来使用的 Image 标签渲染的图片，不会本地缓存，导致每次都需要加载一次。</p>
@@ -619,21 +619,21 @@ export default class CustomImage extends Component {
 </div>
 <div class="section" id="costum-usage">
 <span id="header-n40"></span><h6><a class="toc-backref" href="#id27">costum usage</a><a class="headerlink" href="#costum-usage" title="Permalink to this headline">¶</a></h6>
-<div class="highlight-react notranslate"><div class="highlight"><pre><span></span>&lt;CustomCachedImage
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">CustomCachedImage</span>
 
-  component={Image}
+  <span class="n">component</span><span class="o">=</span><span class="p">{</span><span class="n">Image</span><span class="p">}</span>
 
-  source={{ uri: &#39;http://loremflickr.com/640/480/dog&#39; }}
+  <span class="n">source</span><span class="o">=</span><span class="p">{{</span> <span class="n">uri</span><span class="p">:</span> <span class="s1">&#39;http://loremflickr.com/640/480/dog&#39;</span> <span class="p">}}</span>
 
-  indicator={ProgressBar}
+  <span class="n">indicator</span><span class="o">=</span><span class="p">{</span><span class="n">ProgressBar</span><span class="p">}</span>
 
-  style={{
+  <span class="n">style</span><span class="o">=</span><span class="p">{{</span>
 
-    width: 320,
+    <span class="n">width</span><span class="p">:</span> <span class="mi">320</span><span class="p">,</span>
 
-    height: 240,
+    <span class="n">height</span><span class="p">:</span> <span class="mi">240</span><span class="p">,</span>
 
-  }}/&gt;
+  <span class="p">}}</span><span class="o">/&gt;</span>
 </pre></div>
 </div>
 <p>可以使用<a class="reference external" href="https://github.com/oblador/react-native-image-progress">react-native-image-progress</a>中的动画
@@ -706,10 +706,10 @@ might have different version with different paths in the cache.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../react-native7/" class="btn btn-neutral float-right" title="react-native实战:轮播引导和登陆注册" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../ios/react-native10/" class="btn btn-neutral float-right" title="react-native扩展:IOS踩坑纪录" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../react-native5/" class="btn btn-neutral float-left" title="react-native初识:布局和CSS样式、第三方库的引入" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../react-native9/" class="btn btn-neutral float-left" title="react-native实战:支付宝接入app支付" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
