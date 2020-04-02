@@ -187,6 +187,97 @@ RN端
       }
    }
 
+设置监听完成后，在支付页面，初始化商品列表。
+::
+
+   import { Card,Toast, CardItem, Body, Container, Button, Icon, Text, Content, CheckBox, Header, ListItem } from 'native-base';
+   import RNIap, {
+      purchaseErrorListener,
+      purchaseUpdatedListener,
+      type ProductPurchase,
+      type PurchaseError
+   } from 'react-native-iap';
+
+   #productID列表
+   const identifiers = [
+      'com.xxx.1bill',
+      'com.xxx.3bill',
+   ];
+
+   export default class Pay extends Component {
+      constructor(props) {
+         super(props);
+         this.state = {
+            pressed: 1,
+            check_pay: 1,
+            Username:"",
+            Userid:0,
+            Balance:0,
+            Used:0,
+
+            #使用prepared作为标志，在未完成getproducts或者purchase之前，不允许再次点击
+            prepared:false,
+            products:[], 
+         };
+      }
+
+      #在componentwillmount或didmount中，调用getproducts
+      async componentWillMount(){
+         try {
+            var products = await RNIap.getProducts(identifiers)
+
+            #getproducts完成后 按钮可用
+            this.setState({ products:products,prepared:true })
+         } catch(err) {
+               this.showtoast("Apple服务器无响应","warning")
+         }
+      }
+      
+      #按钮调用的支付函数中 直接使用requestPruchase（第二个参数为是否自动进行finishtransaction--false则为手动）
+      async iospay(){
+         try {
+            const sku = "com.xxx.xxx"
+            this.showtoast("正在向Apple发起支付请求,请耐心等待","success")
+            await RNIap.requestPurchase(sku, false)
+         } catch (err) {
+            console.warn(err.code, err.message)
+            this.showtoast("支付失败","warning")
+         }
+         this.setState({ prepared: true });
+      }
+      
+      showtoast(text,type){
+         Toast.show({
+            text: text,
+            buttonText: "好的",
+            type: type
+         });
+      }
+      render() {
+         return (
+
+            #.....
+            #.....
+            #.....
+
+            <Grid style={{ marginTop: 10 }}>
+               <Col>
+                  <Button info block disabled={!this.state.prepared}
+                        onPress={()=>{
+                           this.setState({ prepared: false })
+                           this.iospay()
+                        }}
+                  >
+                     <Text>{this.state.prepared? "确认支付":"Connecting to AppStore.."}</Text>
+                  </Button>
+               </Col>
+            </Grid>
+
+         );
+      }
+   }
+
+
 .. _header-n120:
 
 服务端
@@ -250,6 +341,7 @@ fastjson的maven依赖
       <artifactId>fastjson</artifactId>
       <version>1.2.51</version>
    </dependency>
+
 真机调试
 --------
 

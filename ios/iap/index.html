@@ -352,6 +352,95 @@
 <span class="p">}</span>
 </pre></div>
 </div>
+<p>设置监听完成后，在支付页面，初始化商品列表。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>import { Card,Toast, CardItem, Body, Container, Button, Icon, Text, Content, CheckBox, Header, ListItem } from &#39;native-base&#39;;
+import RNIap, {
+   purchaseErrorListener,
+   purchaseUpdatedListener,
+   type ProductPurchase,
+   type PurchaseError
+} from &#39;react-native-iap&#39;;
+
+#productID列表
+const identifiers = [
+   &#39;com.xxx.1bill&#39;,
+   &#39;com.xxx.3bill&#39;,
+];
+
+export default class Pay extends Component {
+   constructor(props) {
+      super(props);
+      this.state = {
+         pressed: 1,
+         check_pay: 1,
+         Username:&quot;&quot;,
+         Userid:0,
+         Balance:0,
+         Used:0,
+
+         #使用prepared作为标志，在未完成getproducts或者purchase之前，不允许再次点击
+         prepared:false,
+         products:[],
+      };
+   }
+
+   #在componentwillmount或didmount中，调用getproducts
+   async componentWillMount(){
+      try {
+         var products = await RNIap.getProducts(identifiers)
+
+         #getproducts完成后 按钮可用
+         this.setState({ products:products,prepared:true })
+      } catch(err) {
+            this.showtoast(&quot;Apple服务器无响应&quot;,&quot;warning&quot;)
+      }
+   }
+
+   #按钮调用的支付函数中 直接使用requestPruchase（第二个参数为是否自动进行finishtransaction--false则为手动）
+   async iospay(){
+      try {
+         const sku = &quot;com.xxx.xxx&quot;
+         this.showtoast(&quot;正在向Apple发起支付请求,请耐心等待&quot;,&quot;success&quot;)
+         await RNIap.requestPurchase(sku, false)
+      } catch (err) {
+         console.warn(err.code, err.message)
+         this.showtoast(&quot;支付失败&quot;,&quot;warning&quot;)
+      }
+      this.setState({ prepared: true });
+   }
+
+   showtoast(text,type){
+      Toast.show({
+         text: text,
+         buttonText: &quot;好的&quot;,
+         type: type
+      });
+   }
+   render() {
+      return (
+
+         #.....
+         #.....
+         #.....
+
+         &lt;Grid style={{ marginTop: 10 }}&gt;
+            &lt;Col&gt;
+               &lt;Button info block disabled={!this.state.prepared}
+                     onPress={()=&gt;{
+                        this.setState({ prepared: false })
+                        this.iospay()
+                     }}
+               &gt;
+                  &lt;Text&gt;{this.state.prepared? &quot;确认支付&quot;:&quot;Connecting to AppStore..&quot;}&lt;/Text&gt;
+               &lt;/Button&gt;
+            &lt;/Col&gt;
+         &lt;/Grid&gt;
+
+      );
+   }
+}
+</pre></div>
+</div>
 </div>
 <div class="section" id="header-n120">
 <span id="id5"></span><h3>服务端<a class="headerlink" href="#header-n120" title="Permalink to this headline">¶</a></h3>
