@@ -50,7 +50,9 @@
    :maxdepth: 2
 
    ios/react-native10.rst
+   ios/iosrn.rst
    ios/iap.rst
+   ios/appstore.rst
 
 .. toctree::
    :caption: Lua脚本

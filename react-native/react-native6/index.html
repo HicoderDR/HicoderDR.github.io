@@ -36,7 +36,7 @@
     <link rel="author" title="About these documents" href="../../about/" />
     <link rel="index" title="Index" href="../../genindex/" />
     <link rel="search" title="Search" href="../../search/" />
-    <link rel="next" title="react-native扩展:IOS踩坑纪录" href="../../ios/react-native10/" />
+    <link rel="next" title="react-native:IOS环境搭建" href="../../ios/react-native10/" />
     <link rel="prev" title="react-native实战:支付宝接入app支付" href="../react-native9/" />
    
   
@@ -137,8 +137,10 @@
 </ul>
 <p class="caption"><span class="caption-text">IOS开发</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../ios/react-native10/">react-native扩展:IOS踩坑纪录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ios/react-native10/">react-native:IOS环境搭建</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ios/iosrn/">IOS-RN踩坑记录</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../ios/iap/">IOS 内购—奔溃一条龙</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ios/appstore/">IOS AppStore审核七进七出</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Lua脚本</span></p>
 <ul>
@@ -582,6 +584,8 @@ export default class CustomImage extends Component {
 </ul>
 </div>
 <p>很简洁的文档，建议搭配下面的组件使用。</p>
+<p>CachedImage</p>
+<p>basic usage</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="p">{</span><span class="n">CachedImage</span><span class="p">}</span> <span class="kn">from</span> <span class="s2">&quot;react-native-img-cache&quot;</span><span class="p">;</span>
 
 
@@ -591,6 +595,7 @@ export default class CustomImage extends Component {
 </div>
 <p>原来使用的 Image 标签渲染的图片，不会本地缓存，导致每次都需要加载一次。</p>
 <p>换用缓存后效果有显著提升。</p>
+<p>costum usage</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">CustomCachedImage</span>
 
   <span class="n">component</span><span class="o">=</span><span class="p">{</span><span class="n">Image</span><span class="p">}</span>
@@ -611,8 +616,8 @@ export default class CustomImage extends Component {
 <p>可以使用<a class="reference external" href="https://github.com/oblador/react-native-image-progress">react-native-image-progress</a>中的动画
 <strong>progressbar(进度条)pie(饼图)Circle(圆圈)</strong>来显示加载进度，好看但并不那么实用，可能会因为
 Art 版本问题在IOS上报错。</p>
-<p id="header-n45">ImageCache</p>
-<p id="header-n25">clear() ：清空</p>
+<p>ImageCache</p>
+<p>clear() ：清空</p>
 <p>Remove cache entries and all physical files.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ImageCache</span><span class="o">.</span><span class="n">get</span><span class="p">()</span><span class="o">.</span><span class="n">clear</span><span class="p">();</span>
 </pre></div>
@@ -630,7 +635,7 @@ images</a>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ImageCache</span><span class="o">.</span><span class="n">get</span><span class="p">()</span><span class="o">.</span><span class="n">cancel</span><span class="p">(</span><span class="s2">&quot;https://i.ytimg.com/vi/yaqe1qesQ8c/maxresdefault.jpg&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p id="header-n34">on(uri, observer, immutable)</p>
+<p>on(uri, observer, immutable)</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">ImageCache</span></code> class can register observers to the cache.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>const immutable = true;
 
@@ -661,7 +666,7 @@ might have different version with different paths in the cache.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../ios/react-native10/" class="btn btn-neutral float-right" title="react-native扩展:IOS踩坑纪录" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../ios/react-native10/" class="btn btn-neutral float-right" title="react-native:IOS环境搭建" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../react-native9/" class="btn btn-neutral float-left" title="react-native实战:支付宝接入app支付" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

@@ -1,0 +1,170 @@
+.. _header-n0:
+
+IOS AppStore审核七进七出
+========================
+
+.. _header-n2:
+
+背景
+----
+
+| 前段时间草草了事地完成了RN项目的移植。
+| 开始使用的是Mac OS 10.14 和 Xcode10.1。
+| 更换成MacOS 10.15 Catalina 和Xcode11.3.1。
+
+关于上架流程可以在\ `AU的帮助文档 <http://www.applicationloader.net/>`__\ 里学到很多
+
+.. _header-n5:
+
+发布准备
+--------
+
+.. _header-n6:
+
+首先是登陆\ `苹果开发者官网 <https://developer.apple.com/>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. 申请IOS证书
+
+2. 生成描述文件
+
+3. 导入到xcode中
+
+4. 在devices中添加调试设备的UUID（用来真机测试,获取UUID可以使用蒲公英的扫码功能）
+
+（然后事实证明，其实证书和描述文件都不用做，因为Xcode有AutoSign的功能）
+
+.. _header-n17:
+
+其次是应用打IPA包
+~~~~~~~~~~~~~~~~~
+
+首先要能够在xcode中Build成功，并对RN的JS打包，参考 IOS踩坑记录-js打包。
+
+1. General中确认版本号正确，Devices选择Generic IOS Device
+
+   .. image:: ../_static/xcode1.png
+      :alt: 
+
+2. 导航栏 Product - archive
+
+3. 选择 distribute 发布
+
+   .. figure:: ../_static/xcode2.png
+      :alt: 
+
+4. 第一次真机测试选择development（Ad Hoc），最后一次确认无误后选择App
+   store上传即可
+
+   .. figure:: ../_static/xcode3.png
+      :alt: 
+
+5. 选择development打完包以后，export导出，然后使用蒲公英等类似的分发平台，将IPA包分发到真机上进行测试。
+
+6. 选择App Store上传后，可以进入
+`itunesConnect（Appstore） <https://appstoreconnect.apple.com/>`_
+官网进行发布。
+
+.. _header-n34:
+
+准备好上架材料
+~~~~~~~~~~~~~~
+
+1. 5.5英寸(Iphone X)和6.5英寸(Iphone XS MAX)屏幕的IOS界面截图,打开模拟器后cmd+S截图
+
+2. 应用简介、新版本特性
+
+3. 隐私协议网址
+
+4. AppIcon 1024*1024
+
+.. _header-n45:
+
+审核-七进七出
+-------------
+
+.. _header-n46:
+
+拒之门外
+~~~~~~~~
+
+先是一波闭门羹，两个较为浅显的问题。
+
+1. info.plist里获取权限的Description不够具体
+
+2. 轮播图中的手机外框不是iphone
+
+叫美工改图
+
+.. _header-n54:
+
+抠细节
+~~~~~~
+
+第二波闭门羹--轮播图中的屏幕内操作系统不是IOS。
+
+.. code:: 
+
+   Guideline 2.3.10 - Performance - Accurate Metadata
+
+   We noticed that your app or its metadata includes irrelevant third-party platform information.
+
+   Specifically, your app includes non-iOS device images in the onboarding screens.
+
+   Referencing third-party platforms in your app or its metadata is not permitted on the App Store unless there is specific interactive functionality.
+
+我苦笑，苹果真抠细节。
+
+.. _header-n58:
+
+踏进门槛被踢出来
+~~~~~~~~~~~~~~~~
+
+亲爱的开发者，我们发现您的包中含有应用内支付（Alipay）,根据Guideline巴拉巴拉，所有应用内购必须集成使用AppStore-InAppPurchase（IAP）。
+
+头秃了一波，我千疮百孔的支付逻辑被迫重生，参见
+IOS内购奔溃一条龙（IAP）。
+
+.. _header-n61:
+
+搞心态
+~~~~~~
+
+.. code:: 
+
+   Dear Developer,
+   We identified one or more issues with a recent delivery for your app, "智能钢筋计数" 1.0 (2). Your delivery was successful, but you may wish to correct the following issues in your next delivery:
+
+   ITMS-90725: SDK Version Issue - This app was built with the iOS 12.1 SDK. Starting April 2020, all iOS apps submitted to the App Store must be built with the iOS 13 SDK or later, included in Xcode 11 or later.
+
+   After you’ve corrected the issues, you can upload a new binary to App Store Connect.
+
+   Best regards,
+   The App Store Team
+
+哟，2020新规定，苹果又抽风了。
+
+这波我哭了，之前使用的低版本MacOS 10.14
+装了Xcode10.1，这不是逼我升级黑苹果嘛
+
+连夜下了新版的黑苹果镜像，在Mac中点开dmg成功更新。
+
+然后在Xcode官网点击下载了推荐页的Xcode11.4-beta版（伏笔）
+
+.. _header-n67:
+
+自己搞自己
+~~~~~~~~~~
+
+浪交一发，又被退了回来，这回我真的来火了。
+
+一看，说是使用的Xcode里的SDK版本不行，GuideLine让我回退版本。
+
+冷静了之后发现了问题是出在下载的Beta版本上。只好重装Xcode11.3.1。
+
+.. _header-n71:
+
+最后的最后
+~~~~~~~~~~
+
+终于提交成功了。

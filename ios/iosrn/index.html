@@ -1,0 +1,391 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>IOS-RN踩坑记录 &mdash; HicoDR  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../../about/" />
+    <link rel="index" title="Index" href="../../genindex/" />
+    <link rel="search" title="Search" href="../../search/" />
+    <link rel="next" title="IOS 内购—奔溃一条龙" href="../iap/" />
+    <link rel="prev" title="react-native:IOS环境搭建" href="../react-native10/" />
+   
+  
+  <link rel="alternate" type="application/atom+xml"  href="../../blog/atom.xml" title="HicoDR Blog">
+  
+  
+  <link href="True" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+    ul.postlist a {font-style: italic;}
+    ul.postlist-style-disc {list-style-type: disc;}
+    ul.postlist-style-none {list-style-type: none;}
+    ul.postlist-style-circle {list-style-type: circle;}
+  </style>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../" class="icon icon-home"> HicoDR
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">简介</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/">关于 HicoDR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../first-post/">博客更新计划</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ablog/">我如何创建自己的博客</a></li>
+</ul>
+<p class="caption"><span class="caption-text">react-native</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../react-native/react-native1/">react-native考察：对比Flutter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../react-native/react-native2/">react-native入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../react-native/react-native3/">react-native初识:目录结构与HelloWorld</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../react-native/react-native4/">react-native初识: state 和 props</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../react-native/react-native5/">react-native初识:布局和CSS样式、第三方库的引入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../react-native/react-native7/">react-native实战:轮播引导和登陆注册</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../react-native/react-native8/">react-native进阶:秒嘀云+Nativebase实现短信验证码登陆</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../react-native/react-native9/">react-native实战:支付宝接入app支付</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../react-native/react-native6/">react-native初识：我使用的组件</a></li>
+</ul>
+<p class="caption"><span class="caption-text">IOS开发</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../react-native10/">react-native:IOS环境搭建</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">IOS-RN踩坑记录</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#rct">各种RCT报错</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#header-n2">轮播图滑动没反应</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#appiconlaunchimage">AppIcon和LaunchImage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#xcode4-staticxcode4-png">![xcode4](.._staticxcode4.png</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cameraroll">CameraRoll 保存图片至本地失败</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rn-js">RN-js打包</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../iap/">IOS 内购—奔溃一条龙</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appstore/">IOS AppStore审核七进七出</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Lua脚本</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../lua/touchsprite/">触动精灵-Android自动化测试脚本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lua/dota2rpg/">Dota2 RPG Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lua/dota2ai/">Dota2 AI 强化学习</a></li>
+</ul>
+<p class="caption"><span class="caption-text">杂项</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../other/bs4/">bs4爬虫实战:全家Family网站攻略</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../other/pythread/">Python多线程：Family数据批量生成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../other/openssh/">Paramiko：Python+ssh做快乐网管</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../other/fiddler/">Fiddler:借助抓包工具写手机APP的Python脚本</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Web 后端</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../backend/springboot1/">Springboot初识:了解Spring</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">HicoDR</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../">Docs</a> &raquo;</li>
+        
+      <li>IOS-RN踩坑记录</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/ios/iosrn.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ios-rn">
+<span id="header-n0"></span><h1>IOS-RN踩坑记录<a class="headerlink" href="#ios-rn" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="rct">
+<span id="header-n43"></span><h2>各种RCT报错<a class="headerlink" href="#rct" title="Permalink to this headline">¶</a></h2>
+<p>一般是React并未被编译，在Libraries-&gt;add files to
+“”里将node_modules/react-native/react.xcodeproj添加进去，同时在build
+phases中将libreact.a手动添加进linking中。</p>
+<p>然后 导航栏Product-&gt;schemes-&gt;edit schemes-&gt;build
+中将react拖到你的项目之前，就会优先编译react。</p>
+</div>
+<div class="section" id="header-n2">
+<span id="id1"></span><h2>轮播图滑动没反应<a class="headerlink" href="#header-n2" title="Permalink to this headline">¶</a></h2>
+<p>react-native-swiper死掉了，怀疑是react-native-progress版本问题，回退到3.6.0并没有解决问题。</p>
+<p>换用react-native-page-swiper，解决。</p>
+</div>
+<div class="section" id="appiconlaunchimage">
+<span id="header-n10"></span><h2>AppIcon和LaunchImage<a class="headerlink" href="#appiconlaunchimage" title="Permalink to this headline">¶</a></h2>
+<p>build phases中有个Copy bundle resources</p>
+</div>
+<div class="section" id="xcode4-staticxcode4-png">
+<span id="header-n7"></span><h2>![xcode4](.._staticxcode4.png<a class="headerlink" href="#xcode4-staticxcode4-png" title="Permalink to this headline">¶</a></h2>
+<p>添加静态资源，很烦，要准备各种尺寸的图片。</p>
+<p>使用Python一键解决</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+
+
+
+<span class="c1">#w=[320,640,640,750,1242,2208,2436]</span>
+
+<span class="c1">#h=[480,960,1136,1334,2208,1242,1125]</span>
+
+<span class="n">w</span><span class="o">=</span><span class="p">[</span><span class="mi">16</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">58</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">87</span><span class="p">,</span><span class="mi">120</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">216</span><span class="p">,</span><span class="mi">256</span><span class="p">,</span><span class="mi">512</span><span class="p">,</span><span class="mi">1024</span><span class="p">]</span>
+
+<span class="n">h</span><span class="o">=</span><span class="p">[</span><span class="mi">16</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">58</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">87</span><span class="p">,</span><span class="mi">120</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">216</span><span class="p">,</span><span class="mi">256</span><span class="p">,</span><span class="mi">512</span><span class="p">,</span><span class="mi">1024</span><span class="p">]</span>
+
+<span class="n">file</span><span class="o">=</span><span class="s1">&#39;./ori_square.png&#39;</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">w</span><span class="p">)):</span>
+
+    <span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+
+    <span class="n">width</span><span class="o">=</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+    <span class="n">height</span><span class="o">=</span><span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+    <span class="c1">#resize</span>
+
+    <span class="n">img</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">resize</span><span class="p">((</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">),</span> <span class="n">Image</span><span class="o">.</span><span class="n">ANTIALIAS</span><span class="p">)</span>
+
+     <span class="c1">#mkdir+name</span>
+
+    <span class="n">dirname</span><span class="o">=</span><span class="s2">&quot;./ico_&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">width</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;x&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">height</span><span class="p">)</span>
+
+    <span class="n">filename</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">width</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;x&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">height</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;.png&quot;</span>
+
+    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">dirname</span><span class="p">)</span>
+
+    <span class="n">img</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">dirname</span><span class="o">+</span><span class="s2">&quot;/&quot;</span><span class="o">+</span><span class="n">filename</span><span class="p">)</span>
+
+
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;success&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">width</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;x&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">height</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>添加完后在General中设置即可</p>
+</div>
+<div class="section" id="cameraroll">
+<span id="header-n23"></span><h2>CameraRoll 保存图片至本地失败<a class="headerlink" href="#cameraroll" title="Permalink to this headline">¶</a></h2>
+<p>首先检查info.plist权限正常。</p>
+<p>然后发现react-native已经移除了CameraRoll（！！？？，那为什么我Android上能用？）</p>
+<p>换用<a class="reference external" href="https://github.com/react-native-community/react-native-cameraroll">&#64;react-native-community/cameraroll</a></p>
+</div>
+<div class="section" id="rn-js">
+<span id="header-n38"></span><h2>RN-js打包<a class="headerlink" href="#rn-js" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p>在AppDelegate.m中</p>
+<p>&#64;implementation AppDelegate 下方 &#64;end之前添加</p>
+<div class="highlight-swift notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="p">(</span><span class="bp">NSURL</span> <span class="o">*</span><span class="p">)</span><span class="n">sourceURLForBridge</span><span class="p">:(</span><span class="n">RCTBridge</span> <span class="o">*</span><span class="p">)</span><span class="n">bridge</span>
+
+<span class="p">{</span>
+
+<span class="cp">#if</span> <span class="cp">DEBUG</span>
+
+<span class="k">return</span> <span class="p">[[</span><span class="n">RCTBundleURLProvider</span> <span class="n">sharedSettings</span><span class="p">]</span> <span class="n">jsBundleURLForBundleRoot</span><span class="p">:@</span><span class="s">&quot;index&quot;</span> <span class="n">fallbackResource</span><span class="p">:</span><span class="kc">nil</span><span class="p">];</span>
+
+<span class="cp">#else</span>
+
+<span class="k">return</span> <span class="p">[[</span><span class="bp">NSBundle</span> <span class="n">mainBundle</span><span class="p">]</span> <span class="n">URLForResource</span><span class="p">:@</span><span class="s">&quot;main&quot;</span> <span class="n">withExtension</span><span class="p">:@</span><span class="s">&quot;jsbundle&quot;</span><span class="p">];</span>
+
+<span class="cp">#endif</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>在root/ios 目录下新建bundle文件夹</p></li>
+<li><p>在yarn的配置文件package.json中添加</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;scripts&quot;: {
+
+  &quot;android&quot;: &quot;react-native run-android&quot;,
+
+  &quot;ios&quot;: &quot;react-native run-ios&quot;,
+
+  &quot;start&quot;: &quot;react-native start&quot;,
+
+  &quot;test&quot;: &quot;jest&quot;,
+
+  &quot;lint&quot;: &quot;eslint .&quot;,
+
+  #添加 bundle-ios 指令
+
+  &quot;bundle-ios&quot;: &quot;node node_modules/react-native/local-cli/cli.js bundle --entry-file index.js  --platform ios --dev false --bundle-output ./ios/bundle/index.ios.jsbundle --assets-dest ./ios/bundle&quot;
+
+},
+</pre></div>
+</div>
+</li>
+<li><p>根目录下运行 yarn bundle-ios</p></li>
+<li><p>然后在xcode中就可以正常Build了</p></li>
+</ol>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../iap/" class="btn btn-neutral float-right" title="IOS 内购—奔溃一条龙" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../react-native10/" class="btn btn-neutral float-left" title="react-native:IOS环境搭建" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, HicoDR
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
