@@ -1,4 +1,3 @@
-.. _header-n0:
 
 IOS-RN踩坑记录
 ==============
@@ -14,8 +13,6 @@ phases中将libreact.a手动添加进linking中。
 
 然后 导航栏Product->schemes->edit schemes->build
 中将react拖到你的项目之前，就会优先编译react。
-
-.. _header-n2:
 
 轮播图滑动没反应
 ----------------
@@ -33,8 +30,7 @@ build phases中有个Copy bundle resources
 
 .. _header-n7:
 
-![xcode4](..\_static\xcode4.png
--------------------------------
+.. image:: ../_static/xcode4.png
 
 添加静态资源，很烦，要准备各种尺寸的图片。
 
@@ -42,26 +38,25 @@ build phases中有个Copy bundle resources
 
 .. code:: python
 
-   from PIL import Image
-   import os
-   
-   #w=[320,640,640,750,1242,2208,2436]
-   #h=[480,960,1136,1334,2208,1242,1125]
-   w=[16,40,58,60,80,87,120,180,216,256,512,1024]
-   h=[16,40,58,60,80,87,120,180,216,256,512,1024]
-   file='./ori_square.png'
-   for i in range(0,len(w)):
-       img = Image.open(file)
-       width=w[i]
-       height=h[i]
-       #resize
-       img = img.resize((width, height), Image.ANTIALIAS)
-   	#mkdir+name
-       dirname="./ico_"+str(width)+"x"+str(height)
-       filename=str(width)+"x"+str(height)+".png"
-       os.mkdir(dirname)
-       img.save(dirname+"/"+filename)
-   
+   from PIL import Image
+   import os
+   #w=[320,640,640,750,1242,2208,2436]
+   #h=[480,960,1136,1334,2208,1242,1125]
+   w=[16,40,58,60,80,87,120,180,216,256,512,1024]
+   h=[16,40,58,60,80,87,120,180,216,256,512,1024]
+   file='./ori_square.png'
+   for i in range(0,len(w)):
+       img = Image.open(file)
+       width=w[i]
+       height=h[i]
+       # resize
+       img = img.resize((width, height), Image.ANTIALIAS)
+   	 # mkdir+name
+       dirname="./ico_"+str(width)+"x"+str(height)
+       filename=str(width)+"x"+str(height)+".png"
+       os.mkdir(dirname)
+       img.save(dirname+"/"+filename)
+   
        print("success"+str(width)+"x"+str(height))
 
 添加完后在General中设置即可
@@ -88,31 +83,31 @@ RN-js打包
 
    .. code:: swift
 
-      -(NSURL *)sourceURLForBridge:(RCTBridge *)bridge
-      {
-      #if DEBUG
-      return [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
-      #else
-      return [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
-      #endif
+      -(NSURL *)sourceURLForBridge:(RCTBridge *)bridge
+      {
+      #if DEBUG
+      return [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
+      #else
+      return [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
+      #endif
       }
 
 2. 在root/ios 目录下新建bundle文件夹
 
 3. 在yarn的配置文件package.json中添加
 
-   .. code:: json
+   .. code:: 
 
-        "scripts": {
-          "android": "react-native run-android",
-          "ios": "react-native run-ios",
-          "start": "react-native start",
-          "test": "jest",
-          "lint": "eslint .",
-          #添加 bundle-ios 指令
-          "bundle-ios": "node node_modules/react-native/local-cli/cli.js bundle --entry-file index.js  --platform ios --dev false --bundle-output ./ios/bundle/index.ios.jsbundle --assets-dest ./ios/bundle"
+        "scripts": {
+          "android": "react-native run-android",
+          "ios": "react-native run-ios",
+          "start": "react-native start",
+          "test": "jest",
+          "lint": "eslint .",
+          #添加 bundle-ios 指令
+          "bundle-ios": "node node_modules/react-native/local-cli/cli.js bundle --entry-file index.js  --platform ios --dev false --bundle-output ./ios/bundle/index.ios.jsbundle --assets-dest ./ios/bundle"
         },
 
-4. 根目录下运行 yarn bundle-ios
+4. 根目录下运行 yarn bundle-ios,看到bundle文件夹下出现index.ios.jsbundle
 
 5. 然后在xcode中就可以正常Build了
