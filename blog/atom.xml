@@ -8,10 +8,10 @@
   <generator uri="https://ablog.readthedocs.org" version="0.10.3">ABlog</generator>
   <entry xml:base="http://HicoderDR.github.io/blog/atom.xml">
     <title type="text">博客更新计划</title>
-    <id>http://HicoderDR.github.io/first-post/</id>
+    <id>http://HicoderDR.github.io/docs/first-post/</id>
     <updated>2019-09-04T00:00:00Z</updated>
     <published>2019-09-04T00:00:00Z</published>
-    <link href="http://HicoderDR.github.io/first-post/" />
+    <link href="http://HicoderDR.github.io/docs/first-post/" />
     <author>
       <name>HicoderDR</name>
     </author>

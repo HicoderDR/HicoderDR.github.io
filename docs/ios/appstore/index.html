@@ -1,0 +1,396 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>IOS AppStore审核七进七出 &mdash; HicoDR  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex/" />
+    <link rel="search" title="Search" href="../../../search/" />
+    <link rel="next" title="触动精灵-Android自动化测试脚本" href="../../lua/touchsprite/" />
+    <link rel="prev" title="IOS 内购—奔溃一条龙" href="../iap/" />
+   
+  
+  <link rel="alternate" type="application/atom+xml"  href="../../../blog/atom.xml" title="HicoDR Blog">
+  
+  
+  <link href="True" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+    ul.postlist a {font-style: italic;}
+    ul.postlist-style-disc {list-style-type: disc;}
+    ul.postlist-style-none {list-style-type: none;}
+    ul.postlist-style-circle {list-style-type: circle;}
+  </style>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../" class="icon icon-home"> HicoDR
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">简介</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/">关于 HicoDR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../first-post/">博客更新计划</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ablog/">我如何创建自己的博客</a></li>
+</ul>
+<p class="caption"><span class="caption-text">react-native</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../react-native/react-native1/">react-native考察：对比Flutter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../react-native/react-native2/">react-native入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../react-native/react-native3/">react-native初识:目录结构与HelloWorld</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../react-native/react-native4/">react-native初识: state 和 props</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../react-native/react-native5/">react-native初识:布局和CSS样式、第三方库的引入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../react-native/react-native7/">react-native实战:轮播引导和登陆注册</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../react-native/react-native8/">react-native进阶:秒嘀云+Nativebase实现短信验证码登陆</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../react-native/react-native9/">react-native实战:支付宝接入app支付</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../react-native/react-native6/">react-native初识：我使用的组件</a></li>
+</ul>
+<p class="caption"><span class="caption-text">IOS开发</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../react-native10/">react-native:IOS环境搭建</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iosrn/">IOS-RN踩坑记录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iap/">IOS 内购—奔溃一条龙</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">IOS AppStore审核七进七出</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#header-n2">背景</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#header-n5">发布准备</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#header-n6">首先是登陆苹果开发者官网</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ipa">其次是应用打IPA包</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#header-n34">准备好上架材料</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#header-n45">审核-七进七出</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#header-n46">拒之门外</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#header-n54">抠细节</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#header-n58">踏进门槛被踢出来</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#header-n61">搞心态</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#header-n67">自己搞自己</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#header-n71">最后的最后</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Lua脚本</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../lua/touchsprite/">触动精灵-Android自动化测试脚本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lua/dota2rpg/">Dota2 RPG Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lua/dota2ai/">Dota2 AI 强化学习</a></li>
+</ul>
+<p class="caption"><span class="caption-text">杂项</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../other/bs4/">bs4爬虫实战:全家Family网站攻略</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../other/pythread/">Python多线程：Family数据批量生成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../other/openssh/">Paramiko：Python+ssh做快乐网管</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../other/fiddler/">Fiddler:借助抓包工具写手机APP的Python脚本</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Web 后端</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../backend/springboot1/">Springboot初识:了解Spring</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../">HicoDR</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../">Docs</a> &raquo;</li>
+        
+      <li>IOS AppStore审核七进七出</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/docs/ios/appstore.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ios-appstore">
+<span id="header-n0"></span><h1>IOS AppStore审核七进七出<a class="headerlink" href="#ios-appstore" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="header-n2">
+<span id="id1"></span><h2>背景<a class="headerlink" href="#header-n2" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">前段时间草草了事地完成了RN项目的移植。</div>
+<div class="line">开始使用的是Mac OS 10.14 和 Xcode10.1。</div>
+<div class="line">更换成MacOS 10.15 Catalina 和Xcode11.3.1。</div>
+</div>
+<p>关于上架流程可以在<a class="reference external" href="http://www.applicationloader.net/">AU的帮助文档</a>里学到很多</p>
+</div>
+<div class="section" id="header-n5">
+<span id="id2"></span><h2>发布准备<a class="headerlink" href="#header-n5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="header-n6">
+<span id="id3"></span><h3>首先是登陆<a class="reference external" href="https://developer.apple.com/">苹果开发者官网</a><a class="headerlink" href="#header-n6" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>申请IOS证书</p></li>
+<li><p>生成描述文件</p></li>
+<li><p>导入到xcode中</p></li>
+<li><p>在devices中添加调试设备的UUID（用来真机测试,获取UUID可以使用蒲公英的扫码功能）</p></li>
+</ol>
+<p>（然后事实证明，其实证书和描述文件都不用做，因为Xcode有AutoSign的功能）</p>
+</div>
+<div class="section" id="ipa">
+<span id="header-n17"></span><h3>其次是应用打IPA包<a class="headerlink" href="#ipa" title="Permalink to this headline">¶</a></h3>
+<p>首先要能够在xcode中Build成功，并对RN的JS打包，参考 IOS踩坑记录-js打包。</p>
+<ol class="arabic">
+<li><p>General中确认版本号正确，Devices选择Generic IOS Device</p>
+<img alt="" src="../../../_images/xcode1.png" />
+</li>
+<li><p>导航栏 Product - archive</p></li>
+<li><p>选择 distribute 发布</p>
+<div class="figure align-default">
+<img alt="" src="../../../_images/xcode2.png" />
+</div>
+</li>
+<li><p>第一次真机测试选择development（Ad Hoc），最后一次确认无误后选择App
+store上传即可</p>
+<div class="figure align-default">
+<img alt="" src="../../../_images/xcode3.png" />
+</div>
+</li>
+<li><p>选择development打完包以后，export导出，然后使用蒲公英等类似的分发平台，将IPA包分发到真机上进行测试。</p></li>
+</ol>
+<p>6. 选择App Store上传后，可以进入
+<a class="reference external" href="https://appstoreconnect.apple.com/">itunesConnect（Appstore）</a>
+官网进行发布。</p>
+</div>
+<div class="section" id="header-n34">
+<span id="id4"></span><h3>准备好上架材料<a class="headerlink" href="#header-n34" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>5.5英寸(Iphone X)和6.5英寸(Iphone XS MAX)屏幕的IOS界面截图,打开模拟器后cmd+S截图</p></li>
+<li><p>应用简介、新版本特性</p></li>
+<li><p>隐私协议网址</p></li>
+<li><p>AppIcon 1024*1024</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="header-n45">
+<span id="id5"></span><h2>审核-七进七出<a class="headerlink" href="#header-n45" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="header-n46">
+<span id="id6"></span><h3>拒之门外<a class="headerlink" href="#header-n46" title="Permalink to this headline">¶</a></h3>
+<p>先是一波闭门羹，两个较为浅显的问题。</p>
+<ol class="arabic simple">
+<li><p>info.plist里获取权限的Description不够具体</p></li>
+<li><p>轮播图中的手机外框不是iphone</p></li>
+</ol>
+<p>叫美工改图</p>
+</div>
+<div class="section" id="header-n54">
+<span id="id7"></span><h3>抠细节<a class="headerlink" href="#header-n54" title="Permalink to this headline">¶</a></h3>
+<p>第二波闭门羹–轮播图中的屏幕内操作系统不是IOS。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Guideline</span> <span class="mf">2.3</span><span class="o">.</span><span class="mi">10</span> <span class="o">-</span> <span class="n">Performance</span> <span class="o">-</span> <span class="n">Accurate</span> <span class="n">Metadata</span>
+
+<span class="n">We</span> <span class="n">noticed</span> <span class="n">that</span> <span class="n">your</span> <span class="n">app</span> <span class="ow">or</span> <span class="n">its</span> <span class="n">metadata</span> <span class="n">includes</span> <span class="n">irrelevant</span> <span class="n">third</span><span class="o">-</span><span class="n">party</span> <span class="n">platform</span> <span class="n">information</span><span class="o">.</span>
+
+<span class="n">Specifically</span><span class="p">,</span> <span class="n">your</span> <span class="n">app</span> <span class="n">includes</span> <span class="n">non</span><span class="o">-</span><span class="n">iOS</span> <span class="n">device</span> <span class="n">images</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">onboarding</span> <span class="n">screens</span><span class="o">.</span>
+
+<span class="n">Referencing</span> <span class="n">third</span><span class="o">-</span><span class="n">party</span> <span class="n">platforms</span> <span class="ow">in</span> <span class="n">your</span> <span class="n">app</span> <span class="ow">or</span> <span class="n">its</span> <span class="n">metadata</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">permitted</span> <span class="n">on</span> <span class="n">the</span> <span class="n">App</span> <span class="n">Store</span> <span class="n">unless</span> <span class="n">there</span> <span class="ow">is</span> <span class="n">specific</span> <span class="n">interactive</span> <span class="n">functionality</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>我苦笑，苹果真抠细节。</p>
+</div>
+<div class="section" id="header-n58">
+<span id="id8"></span><h3>踏进门槛被踢出来<a class="headerlink" href="#header-n58" title="Permalink to this headline">¶</a></h3>
+<p>亲爱的开发者，我们发现您的包中含有应用内支付（Alipay）,根据Guideline巴拉巴拉，所有应用内购必须集成使用AppStore-InAppPurchase（IAP）。</p>
+<p>头秃了一波，我千疮百孔的支付逻辑被迫重生，参见
+IOS内购奔溃一条龙（IAP）。</p>
+</div>
+<div class="section" id="header-n61">
+<span id="id9"></span><h3>搞心态<a class="headerlink" href="#header-n61" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Dear Developer,
+We identified one or more issues with a recent delivery for your app, &quot;智能钢筋计数&quot; 1.0 (2). Your delivery was successful, but you may wish to correct the following issues in your next delivery:
+
+ITMS-90725: SDK Version Issue - This app was built with the iOS 12.1 SDK. Starting April 2020, all iOS apps submitted to the App Store must be built with the iOS 13 SDK or later, included in Xcode 11 or later.
+
+After you’ve corrected the issues, you can upload a new binary to App Store Connect.
+
+Best regards,
+The App Store Team
+</pre></div>
+</div>
+<p>哟，2020新规定，苹果又抽风了。</p>
+<p>这波我哭了，之前使用的低版本MacOS 10.14
+装了Xcode10.1，这不是逼我升级黑苹果嘛</p>
+<p>连夜下了新版的黑苹果镜像，在Mac中点开dmg成功更新。</p>
+<p>然后在Xcode官网点击下载了推荐页的Xcode11.4-beta版（伏笔）</p>
+</div>
+<div class="section" id="header-n67">
+<span id="id10"></span><h3>自己搞自己<a class="headerlink" href="#header-n67" title="Permalink to this headline">¶</a></h3>
+<p>浪交一发，又被退了回来，这回我真的来火了。</p>
+<p>一看，说是使用的Xcode里的SDK版本不行，GuideLine让我回退版本。</p>
+<p>冷静了之后发现了问题是出在下载的Beta版本上。只好重装Xcode11.3.1。</p>
+</div>
+<div class="section" id="header-n71">
+<span id="id11"></span><h3>最后的最后<a class="headerlink" href="#header-n71" title="Permalink to this headline">¶</a></h3>
+<p>终于提交成功了。</p>
+</div>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../lua/touchsprite/" class="btn btn-neutral float-right" title="触动精灵-Android自动化测试脚本" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../iap/" class="btn btn-neutral float-left" title="IOS 内购—奔溃一条龙" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, HicoDR
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -26,58 +26,62 @@
    :caption: 简介
    :maxdepth: 2
    
-   about.rst
-   first-post.rst
-   ablog.rst
+   docs/about.rst
+   docs/first-post.rst
+   docs/ablog.rst
 
 .. toctree::
    :caption: react-native
    :maxdepth: 2
    
-   react-native/react-native1.rst
-   react-native/react-native2.rst
-   react-native/react-native3.rst
-   react-native/react-native4.rst
-   react-native/react-native5.rst
-   react-native/react-native7.rst
-   react-native/react-native8.rst
-   react-native/react-native9.rst
-   react-native/react-native6.rst
+   docs/react-native/react-native1.rst
+   docs/react-native/react-native2.rst
+   docs/react-native/react-native3.rst
+   docs/react-native/react-native4.rst
+   docs/react-native/react-native5.rst
+   docs/react-native/react-native7.rst
+   docs/react-native/react-native8.rst
+   docs/react-native/react-native9.rst
+   docs/react-native/react-native6.rst
 
 
 .. toctree::
    :caption: IOS开发
    :maxdepth: 2
 
-   ios/react-native10.rst
-   ios/iosrn.rst
-   ios/iap.rst
-   ios/appstore.rst
+   docs/ios/react-native10.rst
+   docs/ios/iosrn.rst
+   docs/ios/iap.rst
+   docs/ios/appstore.rst
+
+.. toctree::
+   :caption: 机器学习-大创
+   :maxdepth: 2
+
+   docs/ml/K-BERT.rst
+   docs/ml/LXMERT.rst
+   docs/ml/VL-BERT.rst
 
 .. toctree::
    :caption: Lua脚本
    :maxdepth: 2
 
-   lua/touchsprite.rst
-   lua/dota2rpg.rst
-   lua/dota2ai.rst
+   docs/lua/touchsprite.rst
+   docs/lua/dota2rpg.rst
+   docs/lua/dota2ai.rst
 
 .. toctree::
    :caption: 杂项
    :maxdepth: 2
 
-   other/bs4.rst
-   other/pythread.rst
-   other/openssh.rst
-   other/fiddler.rst
+   docs/other/bs4.rst
+   docs/other/pythread.rst
+   docs/other/openssh.rst
+   docs/other/fiddler.rst
 
 .. toctree::
    :caption: Web 后端
    :maxdepth: 2
 
-   backend/springboot1.rst
-
-.. toctree::
-   :caption: 机器学习-大创
-   :maxdepth: 2
+   docs/backend/springboot1.rst
 

@@ -1,0 +1,26 @@
+.. _header-n2:
+
+K-BERT: Enabling Language Representation with Knowledge Graph
+=============================================================
+
+.. _header-n3:
+
+简述
+----
+
+-  arXiv 1909.07606
+
+-  官方实现 https://github.com/autoliuweijie/K-BERT
+
+-  收录于 AAAI-2020
+
+.. _header-n11:
+
+阅读笔记
+--------
+
+已有非常专业的导读：https://zhuanlan.zhihu.com/p/101302240
+
+核心思想简单但有意思：通过设计\ **可见矩阵**\ 和对应的Softmax函数使得非序列结构（也即知识图谱）能够像序列结构一样作为类BERT模型的输入并参与训练
+
+源代码也比较简介清晰
